@@ -3,9 +3,12 @@ import {PerspectiveCamera, OrbitControls, Environment} from "@react-three/drei"
 import {useFrame} from "@react-three/fiber"
 import {angleToRadians} from "../../utils/angle";
 import * as THREE from "three"
+import gsap from "gsap"
 
 export default function Three() {
 
+
+    //Code to move the camera around
     const orbitControlsRef = useRef(null);
     useFrame((state) => {
         if(!!orbitControlsRef.current){
@@ -18,11 +21,50 @@ export default function Three() {
         }
     })
 
-    useEffect(() => {
-      if(!!orbitControlsRef.current){
-        console.log(orbitControlsRef.current)
-      }
-    }, [orbitControlsRef.current])
+    //Animation
+    const ballRef = useRef(null);
+    useEffect(() =>{
+        if(!!ballRef.current){
+          console.log(ballRef.current)  
+
+            //Timeline
+            //docs of timeline https://greensock.com/docs/v3/GSAP/Timeline
+            const timeline = gsap.timeline({paused:true});
+
+            //x-axis motion
+            timeline.to(ballRef.current.position,{
+                x: 2,
+                duration: 2,
+                //https://greensock.com/ease-visualizer/ to visualize different eases
+                //ease: "linear"
+                //ease: "easeOut"
+                //ease: "easeIn"
+                ease: "power1.out"
+            })
+
+            //y-axis motion
+            timeline.to(ballRef.current.position,{
+                y: 0.5,
+                duration: 1.7,
+                //https://greensock.com/ease-visualizer/ to visualize different eases
+                //ease: "linear"
+                //ease: "easeOut"
+                ease: "bounce.out"
+            }, 
+            //">+=3")
+            "<")
+
+            //Play
+            timeline.play()
+        }
+    },[ballRef.current])
+      
+
+    // useEffect(() => {
+    //   if(!!orbitControlsRef.current){
+    //     console.log(orbitControlsRef.current)
+    //   }
+    // }, [orbitControlsRef.current])
     
 
     return(
@@ -39,8 +81,9 @@ export default function Three() {
 
             {/* Ball */}
             <mesh 
-            position={[0,0.5,0]}
-            castShadow>
+            position={[-2,2.5,0]}
+            castShadow
+            ref={ballRef}>
                 <sphereGeometry 
                 args={[0.5, 32, 32]} />
                 
@@ -80,7 +123,7 @@ export default function Three() {
             {/* sportLight */}
             <spotLight
             args={["#ffffff", 1.5,7,angleToRadians(45),0.4]}
-            position={[-3,1,0]}
+            position={[-4,1,0]}
             castShadow/>
 
             <Environment
