@@ -1,12 +1,15 @@
-import {useRef, useEffect} from "react"
-import {PerspectiveCamera, OrbitControls, Environment} from "@react-three/drei"
+import {useRef, useEffect, useState} from "react"
+import {PerspectiveCamera, OrbitControls, Environment, useTexture} from "@react-three/drei"
 import {useFrame} from "@react-three/fiber"
 import {angleToRadians} from "../../utils/angle";
 import * as THREE from "three"
 import gsap from "gsap"
 
+import Tshirt from "./tShirt"
+
 export default function Three() {
 
+    //const [colorMapTexture] = useTexture([]);
 
     //Code to move the camera around
     const orbitControlsRef = useRef(null);
@@ -58,13 +61,33 @@ export default function Three() {
             timeline.play()
         }
     },[ballRef.current])
-      
 
-    // useEffect(() => {
-    //   if(!!orbitControlsRef.current){
-    //     console.log(orbitControlsRef.current)
-    //   }
-    // }, [orbitControlsRef.current])
+
+    const tShirtRef = useRef(null);
+    useEffect(() =>{
+        if(!!tShirtRef.current){
+          console.log(tShirtRef.current)  
+
+            //Timeline
+            //docs of timeline https://greensock.com/docs/v3/GSAP/Timeline
+            const timeline = gsap.timeline({paused:true});
+
+            //y-axis motion to rotate
+            
+            timeline.to(tShirtRef.current.rotation,{
+                y: 60,
+                duration: 60,
+                //https://greensock.com/ease-visualizer/ to visualize different eases
+                ease: "linear"
+            })
+
+
+            //Play
+            timeline.play()
+        }
+    },[tShirtRef.current])
+
+
     
 
     return(
@@ -91,6 +114,13 @@ export default function Three() {
                 color="#ffffff" 
                 metalness={0.6}
                 roughness={0.2}/>
+            </mesh>
+
+            {/* T-shirt */}
+            <mesh 
+            ref={tShirtRef}
+            rotation={[0,0,0]}>
+                <Tshirt/>
             </mesh>
 
             {/* floor */}
