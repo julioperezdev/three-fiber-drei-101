@@ -10,8 +10,28 @@ Title: T Shirt
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import { angleToRadians } from '../../utils/angle'
+import {proxy, useSnapshot} from "valtio"
+
+const state = proxy({
+  current: null,
+  items: {
+    laces: "#ffffff",
+    mesh: "#ffffff",
+    caps: "#ffffff",
+    inner: "#ffffff",
+    sole: "#ffffff",
+    stripes: "#ffffff",
+    band: "#ffffff",
+    patch: "#ffffff",
+    Material109415: "yellow",
+    //nit_Fleece_Terry_FRONT_109192: "yellow"
+    Knit_Fleece_Terry_FRONT_109192: "green"
+    //Knit_Fleece_Terry_FRONT_109192: "blue"
+  },
+})
 
 export default function Tshirt() {
+  const snap = useSnapshot(state)
   const { nodes, materials } = useGLTF('/models/tShirt/t_shirt-transformed.glb')
   return (
     <group  
@@ -21,50 +41,108 @@ export default function Tshirt() {
     position={[-1,-1.5,-1]}
     rotation={[angleToRadians(0), angleToRadians(0), 0]}>
       <group scale={0.01}>
-        <mesh castShadow receiveShadow geometry={nodes.Pattern2D_2949190_Knit_Fleece_Terry_FRONT_109192_0.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes.Pattern2D_2949190_Knit_Fleece_Terry_FRONT_109192_0_1.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes.Pattern2D_2949190_Knit_Fleece_Terry_FRONT_109192_0_2.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['30_Knit_Fleece_Terry_FRONT_109192_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['30_Knit_Fleece_Terry_FRONT_109192_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['30_Knit_Fleece_Terry_FRONT_109192_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['31_Knit_Fleece_Terry_FRONT_109192_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['31_Knit_Fleece_Terry_FRONT_109192_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['31_Knit_Fleece_Terry_FRONT_109192_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['64_Knit_Fleece_Terry_FRONT_109192_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['64_Knit_Fleece_Terry_FRONT_109192_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['64_Knit_Fleece_Terry_FRONT_109192_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['70_Knit_Fleece_Terry_FRONT_109192_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['70_Knit_Fleece_Terry_FRONT_109192_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['70_Knit_Fleece_Terry_FRONT_109192_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['71_Knit_Fleece_Terry_Copy_1_FRONT_109203_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['71_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['71_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['28_Knit_Fleece_Terry_FRONT_109192_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['28_Knit_Fleece_Terry_FRONT_109192_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['28_Knit_Fleece_Terry_FRONT_109192_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['29_Knit_Fleece_Terry_Copy_1_FRONT_109203_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['29_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes['29_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes.Pattern2D_4474558_Knit_Fleece_Terry_Copy_1_FRONT_109203_0.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes.Pattern2D_4474558_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_1.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes.Pattern2D_4474558_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_2.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes.Pattern2D_4491756_Knit_Fleece_Terry_Copy_1_FRONT_109203_0.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes.Pattern2D_4491756_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_1.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes.Pattern2D_4491756_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_2.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
-        <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_127574_Material109415_0.geometry} material={materials.Material109415} />
-        <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_127574_Material109415_0_1.geometry} material={materials.Material109415} />
-        <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_128590_Material109415_0.geometry} material={materials.Material109415} />
-        <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_128590_Material109415_0_1.geometry} material={materials.Material109415} />
-        <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_129132_Material109415_0.geometry} material={materials.Material109415} />
-        <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_130377_Material109415_0.geometry} material={materials.Material109415} />
-        <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_130377_Material109415_0_1.geometry} material={materials.Material109415} />
-        <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_130648_Material109415_0.geometry} material={materials.Material109415} />
-        <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_130909_Material109415_0.geometry} material={materials.Material109415} />
-        <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_132157_Material109415_0.geometry} material={materials.Material109415} />
-        <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_132157_Material109415_0_1.geometry} material={materials.Material109415} />
+        
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes.Pattern2D_2949190_Knit_Fleece_Terry_FRONT_109192_0.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes.Pattern2D_2949190_Knit_Fleece_Terry_FRONT_109192_0_1.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes.Pattern2D_2949190_Knit_Fleece_Terry_FRONT_109192_0_2.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['30_Knit_Fleece_Terry_FRONT_109192_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['30_Knit_Fleece_Terry_FRONT_109192_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['30_Knit_Fleece_Terry_FRONT_109192_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['31_Knit_Fleece_Terry_FRONT_109192_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['31_Knit_Fleece_Terry_FRONT_109192_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['31_Knit_Fleece_Terry_FRONT_109192_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['64_Knit_Fleece_Terry_FRONT_109192_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['64_Knit_Fleece_Terry_FRONT_109192_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['64_Knit_Fleece_Terry_FRONT_109192_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['70_Knit_Fleece_Terry_FRONT_109192_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['70_Knit_Fleece_Terry_FRONT_109192_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['70_Knit_Fleece_Terry_FRONT_109192_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['71_Knit_Fleece_Terry_Copy_1_FRONT_109203_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['71_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['71_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['28_Knit_Fleece_Terry_FRONT_109192_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['28_Knit_Fleece_Terry_FRONT_109192_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['28_Knit_Fleece_Terry_FRONT_109192_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['29_Knit_Fleece_Terry_Copy_1_FRONT_109203_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['29_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes['29_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes.Pattern2D_4474558_Knit_Fleece_Terry_Copy_1_FRONT_109203_0.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes.Pattern2D_4474558_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_1.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes.Pattern2D_4474558_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_2.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes.Pattern2D_4491756_Knit_Fleece_Terry_Copy_1_FRONT_109203_0.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes.Pattern2D_4491756_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_1.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Knit_Fleece_Terry_FRONT_109192} castShadow receiveShadow geometry={nodes.Pattern2D_4491756_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_2.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+        <mesh material-color={snap.items.Material109415} castShadow receiveShadow geometry={nodes.StitchMatShape_127574_Material109415_0.geometry} material={materials.Material109415} />
+        <mesh material-color={snap.items.Material109415} castShadow receiveShadow geometry={nodes.StitchMatShape_127574_Material109415_0_1.geometry} material={materials.Material109415} />
+        <mesh material-color={snap.items.Material109415} castShadow receiveShadow geometry={nodes.StitchMatShape_128590_Material109415_0.geometry} material={materials.Material109415} />
+        <mesh material-color={snap.items.Material109415} castShadow receiveShadow geometry={nodes.StitchMatShape_128590_Material109415_0_1.geometry} material={materials.Material109415} />
+        <mesh material-color={snap.items.Material109415} castShadow receiveShadow geometry={nodes.StitchMatShape_129132_Material109415_0.geometry} material={materials.Material109415} />
+        <mesh material-color={snap.items.Material109415} castShadow receiveShadow geometry={nodes.StitchMatShape_130377_Material109415_0.geometry} material={materials.Material109415} />
+        <mesh material-color={snap.items.Material109415} castShadow receiveShadow geometry={nodes.StitchMatShape_130377_Material109415_0_1.geometry} material={materials.Material109415} />
+        <mesh material-color={snap.items.Material109415} castShadow receiveShadow geometry={nodes.StitchMatShape_130648_Material109415_0.geometry} material={materials.Material109415} />
+        <mesh material-color={snap.items.Material109415} castShadow receiveShadow geometry={nodes.StitchMatShape_130909_Material109415_0.geometry} material={materials.Material109415} />
+        <mesh material-color={snap.items.Material109415} castShadow receiveShadow geometry={nodes.StitchMatShape_132157_Material109415_0.geometry} material={materials.Material109415} />
+        <mesh material-color={snap.items.Material109415} castShadow receiveShadow geometry={nodes.StitchMatShape_132157_Material109415_0_1.geometry} material={materials.Material109415} />
       </group>
     </group>
   )
 }
+
+// export default function Tshirt() {
+//   //const snap = useProxy(state)
+//   const { nodes, materials } = useGLTF('/models/tShirt/t_shirt-transformed.glb')
+//   return (
+//     <group  
+//     dispose={null} 
+//     scale={2.5} 
+//     castShadow
+//     position={[-1,-1.5,-1]}
+//     rotation={[angleToRadians(0), angleToRadians(0), 0]}>
+//       <group scale={0.01}>
+//         <mesh castShadow receiveShadow geometry={nodes.Pattern2D_2949190_Knit_Fleece_Terry_FRONT_109192_0.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes.Pattern2D_2949190_Knit_Fleece_Terry_FRONT_109192_0_1.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes.Pattern2D_2949190_Knit_Fleece_Terry_FRONT_109192_0_2.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['30_Knit_Fleece_Terry_FRONT_109192_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['30_Knit_Fleece_Terry_FRONT_109192_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['30_Knit_Fleece_Terry_FRONT_109192_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['31_Knit_Fleece_Terry_FRONT_109192_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['31_Knit_Fleece_Terry_FRONT_109192_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['31_Knit_Fleece_Terry_FRONT_109192_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['64_Knit_Fleece_Terry_FRONT_109192_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['64_Knit_Fleece_Terry_FRONT_109192_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['64_Knit_Fleece_Terry_FRONT_109192_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['70_Knit_Fleece_Terry_FRONT_109192_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['70_Knit_Fleece_Terry_FRONT_109192_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['70_Knit_Fleece_Terry_FRONT_109192_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['71_Knit_Fleece_Terry_Copy_1_FRONT_109203_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['71_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['71_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['28_Knit_Fleece_Terry_FRONT_109192_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['28_Knit_Fleece_Terry_FRONT_109192_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['28_Knit_Fleece_Terry_FRONT_109192_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['29_Knit_Fleece_Terry_Copy_1_FRONT_109203_0'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['29_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_1'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes['29_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_2'].geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes.Pattern2D_4474558_Knit_Fleece_Terry_Copy_1_FRONT_109203_0.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes.Pattern2D_4474558_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_1.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes.Pattern2D_4474558_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_2.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes.Pattern2D_4491756_Knit_Fleece_Terry_Copy_1_FRONT_109203_0.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes.Pattern2D_4491756_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_1.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes.Pattern2D_4491756_Knit_Fleece_Terry_Copy_1_FRONT_109203_0_2.geometry} material={materials.Knit_Fleece_Terry_FRONT_109192} />
+//         <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_127574_Material109415_0.geometry} material={materials.Material109415} />
+//         <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_127574_Material109415_0_1.geometry} material={materials.Material109415} />
+//         <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_128590_Material109415_0.geometry} material={materials.Material109415} />
+//         <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_128590_Material109415_0_1.geometry} material={materials.Material109415} />
+//         <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_129132_Material109415_0.geometry} material={materials.Material109415} />
+//         <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_130377_Material109415_0.geometry} material={materials.Material109415} />
+//         <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_130377_Material109415_0_1.geometry} material={materials.Material109415} />
+//         <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_130648_Material109415_0.geometry} material={materials.Material109415} />
+//         <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_130909_Material109415_0.geometry} material={materials.Material109415} />
+//         <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_132157_Material109415_0.geometry} material={materials.Material109415} />
+//         <mesh castShadow receiveShadow geometry={nodes.StitchMatShape_132157_Material109415_0_1.geometry} material={materials.Material109415} />
+//       </group>
+//     </group>
+//   )
+// }
 
 useGLTF.preload('/models/tShirt/t_shirt-transformed.glb')

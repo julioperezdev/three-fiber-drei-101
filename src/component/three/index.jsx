@@ -6,6 +6,7 @@ import * as THREE from "three"
 import gsap from "gsap"
 
 import Tshirt from "./tShirt"
+import Tshirtimage from "./T-shirt-image"
 
 export default function Three() {
 
@@ -120,7 +121,8 @@ export default function Three() {
             <mesh 
             ref={tShirtRef}
             rotation={[0,0,0]}>
-                <Tshirt/>
+                {/* <Tshirt/> */}
+                <Tshirtimage/>
             </mesh>
 
             {/* floor */}
